@@ -1,7 +1,7 @@
 export class TeamStore {
   constructor() {
     this.teams = [];
-    this.currentTeamId = '';
+    this.currentTeamId = "";
   }
 
   addTeam(team) {
@@ -18,5 +18,14 @@ export class TeamStore {
 
   deleteTeam(teamId) {
     this.teams = this.teams.filter(({ _id }) => _id !== teamId);
+  }
+
+  findMembersByTeamId(teamId) {
+    const team = this.teams.filter(({ _id }) => _id === teamId);
+    return team.members;
+  }
+
+  setCurrentTeamId(teamId) {
+    this.currentTeamId = teamId;
   }
 }
