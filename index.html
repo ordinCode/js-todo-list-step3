@@ -1,52 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mission 3 Todo List For Team</title>
+    <title>Mission 2 Todo List</title>
     <meta charset="utf-8" />
-    <link href="./css/style.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="./css/app.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script type="module" src="js/main.js"></script>
   </head>
   <body>
     <div id="app">
       <h1 id="user-title" data-username="eastjun">
-        <span><strong>Team</strong>'s Todo Lists</span>
+        <span>Todo List</span>
       </h1>
-      <div class="team-list-container">
-        <div class="team-card-container">
-          <a href="/kanban.html" class="card">
-            <div class="card-title">
-              Black Coffee team
-            </div>
-          </a>
+      <section>
+        <div id="user-list"></div>
+      </section>
+
+      <section class="todoapp">
+        <section class="input-container">
+          <input
+            class="new-todo"
+            placeholder="할 일을 입력해주세요."
+            autofocus
+          />
+        </section>
+        <section class="main">
+          <ul class="todo-list">
+            <li>
+              <div class="view">
+                <label class="label">
+                  <div class="animated-background">
+                    <div class="skel-mask-container">
+                      <div class="skel-mask"></div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <div class="count-container">
+          <span class="todo-count">총 <strong>0</strong> 개</span>
+          <ul class="filters">
+            <li>
+              <a href="/#" class="filters__btn all selected">전체보기</a>
+            </li>
+            <li>
+              <a href="#active" class="filters__btn active">해야할 일</a>
+            </li>
+            <li>
+              <a href="#completed" class="filters__btn completed">완료한 일</a>
+            </li>
+          </ul>
+          <button class="clear-completed">모두 삭제</button>
         </div>
-        <div class="team-card-container">
-          <a href="/kanban.html" class="card">
-            <div class="card-title">
-              Black Coffee team
-            </div>
-          </a>
-        </div>
-        <div class="team-card-container">
-          <a href="/kanban.html" class="card">
-            <div class="card-title">
-              Black Coffee team
-            </div>
-          </a>
-        </div>
-        <div class="team-card-container">
-          <a href="/kanban.html" class="card">
-            <div class="card-title">
-              Black Coffee team
-            </div>
-          </a>
-        </div>
-        <div class="add-team-button-container">
-          <button id="add-team-button" class="ripple">
-            <span class="material-icons">add</span>
-          </button>
-        </div>
-      </div>
+      </section>
     </div>
-    <script src="./js/Team.js"></script>
   </body>
 </html>
