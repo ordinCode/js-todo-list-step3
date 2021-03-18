@@ -1,11 +1,11 @@
 import { teamBtnTemplate } from '../utils/templates.js';
 
-class TeamView {
+export class TeamView {
   constructor() {
     this.$teamListContainer = document.querySelector('.team-list-container');
   }
 
-  renderTeamBtn(teamName) {
+  renderTeamsBtn(teams) {
     this.$teamListContainer;
   }
 }

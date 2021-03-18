@@ -1,6 +1,14 @@
 export class TeamStore {
   constructor() {
-    this.team = [];
-    this.currentTeamId = "";
+    this.teams = [];
+    this.currentTeamId = '';
+  }
+
+  addTeams(teamList) {
+    this.teams = teamList;
+  }
+
+  getTeams() {
+    return this.teams;
   }
 }

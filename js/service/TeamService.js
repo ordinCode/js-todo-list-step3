@@ -1,12 +1,16 @@
-import {teamApi} from "../api/modules/team.js";
+import { teamApi } from '../api/modules/team.js';
+import { $store } from '../store/index.js';
 
 export class TeamService {
-  constructor() {
-  }
+  constructor() {}
 
-  async savaTeam(name) {
+  async saveTeam(name) {
     const team = await teamApi.saveTeam(name);
     console.log(team);
   }
 
+  async loadTeamList() {
+    const teamList = await teamApi.loadTeamList();
+    $store.team.addTeams(teamList);
+  }
 }
