@@ -3,7 +3,8 @@ import { Team } from '../../core/Team.js';
 
 export const teamApi = {
   async saveTeam(name) {
-    return await api.post('/api/teams', { name });
+    let team = await api.post('/api/teams', { name });
+    return new Team(team);
   },
 
   async loadTeamList() {

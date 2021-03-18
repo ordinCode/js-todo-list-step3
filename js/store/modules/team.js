@@ -4,7 +4,11 @@ export class TeamStore {
     this.currentTeamId = '';
   }
 
-  addTeams(teamList) {
+  addTeam(team) {
+    this.teams.push(team);
+  }
+
+  addAllTeams(teamList) {
     this.teams = teamList;
   }
 

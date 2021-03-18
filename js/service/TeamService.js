@@ -6,11 +6,11 @@ export class TeamService {
 
   async saveTeam(name) {
     const team = await teamApi.saveTeam(name);
-    console.log(team);
+    $store.team.addTeam(team);
   }
 
   async loadTeamList() {
     const teamList = await teamApi.loadTeamList();
-    $store.team.addTeams(teamList);
+    $store.team.addAllTeams(teamList);
   }
 }

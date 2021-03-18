@@ -1,28 +1,31 @@
-import { TeamService } from '../service/TeamService.js';
-import { TeamView } from '../view/TeamView.js';
-import { $store } from '../store/index.js';
+import { TeamService } from "../service/TeamService.js";
+import { TeamView } from "../view/TeamView.js";
+import { $store } from "../store/index.js";
+
 export class TeamController {
   constructor() {
-    console.log('init');
-    this.$todoApps = document.querySelector('.team-list-container');
-    this.$todoApps.addEventListener('click', this.onClickTeamCreateButton);
+    console.log("init");
+    this.$todoApps = document.querySelector(".team-list-container");
+    this.$todoApps.addEventListener("click", this.onClickTeamCreateButton);
     this.teamService = new TeamService();
     this.teamView = new TeamView();
   }
 
-  onClickTeamCreateButton = event => {
-    console.log('onClickTeamCreateButton');
-    this.addTeam();
+  onClickTeamCreateButton = (event) => {
+    const target = event.target;
+    if (target.classList.contains("ripple")) {
+      this.addTeam();
+    }
   };
 
   async addTeam() {
-    const teamName = prompt('팀 이름을 입력해주세요.');
+    const teamName = prompt("팀 이름을 입력해주세요.");
     if (!teamName) return;
     await this.teamService.saveTeam(teamName);
-    this.teamView.renderTeamsBtn($store.team.getTeams());
+    this.teamView.renderTeams($store.team.getTeams());
   }
 
-  loadTeamList() {
-    this.teamService.loadTeamList();
+  async loadTeamList() {
+    await this.teamService.loadTeamList();
   }
 }
