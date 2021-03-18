@@ -1,7 +1,7 @@
 import { memberApi } from "/js/api/modules/member.js";
 import { todoView } from "/js/view/TodoView.js";
 import { $store } from "/js/store/index.js";
-import { Member } from "/js/core/member.js";
+import { Member } from "/js/core/Member.js";
 
 function TodoMemberService() {
   this.todoView = todoView;

@@ -1,5 +1,5 @@
 import { api } from "/js/api/index.js";
-import { Member } from "/js/core/member.js";
+import { Member } from "/js/core/Member.js";
 import { $loadingBar } from "/js/view/loadingbar.js";
 
 export const memberApi = {
