@@ -11,4 +11,8 @@ export const teamApi = {
     const teamList = await api.get('/api/teams');
     return teamList.map(team => new Team(team));
   },
+
+  async deleteTeam(teamId) {
+    await api.delete(`/api/teams/${teamId}`);
+  },
 };

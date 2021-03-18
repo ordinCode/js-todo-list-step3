@@ -15,4 +15,8 @@ export class TeamStore {
   getTeams() {
     return this.teams;
   }
+
+  deleteTeam(teamId) {
+    this.teams = this.teams.filter(({ _id }) => _id !== teamId);
+  }
 }

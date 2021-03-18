@@ -13,4 +13,9 @@ export class TeamService {
     const teamList = await teamApi.loadTeamList();
     $store.team.addAllTeams(teamList);
   }
+
+  async deleteTeam(teamId) {
+    await teamApi.deleteTeam(teamId);
+    $store.team.deleteTeam(teamId);
+  }
 }
